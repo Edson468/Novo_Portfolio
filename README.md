@@ -63,4 +63,3 @@ Se você procura um desenvolvedor que se preocupa com a qualidade do entregável
 [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:seuemail@gmail.com)
 
 ---
-*Documentado com foco em qualidade por Edson Carvalho.*
