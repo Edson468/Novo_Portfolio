@@ -20,7 +20,7 @@ export default function Hero() {
           <span className="text-blue-400">Desenvolvedor Fullstack / QA</span>
         </h2>
         <p className="text-lg text-slate-200 max-w-4xl mx-auto mb-8 drop-shadow-md leading-relaxed">
-          Sou um profissional em transição de carreira, migrando da área administrativa, onde atuei como Analista de Backoffice, para o universo da tecnologia. Atualmente, foco meu desenvolvimento em Front-end, enquanto aprofundo conhecimentos em Python para automatizações e me especializo em QA. Busco unir a visão analítica da minha bagagem anterior com a lógica de programação para entregar softwares de alta qualidade e interfaces intuitivas.
+          Sou um profissional em transição de carreira, migrando da área administrativa, onde atuei como Analista de Backoffice, para o universo da tecnologia. Atualmente, dedico-me ao desenvolvimento Fullstack, enquanto aprofundo conhecimentos em Python para automatizações e me especializo em QA. Busco unir a visão analítica da minha experiência anterior com a lógica de programação para entregar softwares de alta qualidade e interfaces intuitivas.
         </p>
         <div className="flex flex-wrap gap-4 justify-center">
           <a href="#projects" className="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(37,99,235,0.4)] cursor-pointer inline-flex items-center justify-center">

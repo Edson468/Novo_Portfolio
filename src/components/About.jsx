@@ -25,7 +25,7 @@ export default function About() {
             </h3>
             <div className="text-slate-600 space-y-4 mb-8 text-lg leading-relaxed">
               <p>
-                Olá, eu sou <strong>Edson Carvalho</strong>! Tenho 39 anos e sou um entusiasta da tecnologia em constante evolução. 
+                Olá, eu sou <strong>Edson Carvalho</strong>! Sou um entusiasta da tecnologia em constante evolução. 
                 Atualmente, estou cursando Análise e Desenvolvimento de Sistemas na Faculdade Facint, onde venho consolidando minha 
                 base teórica e prática para me tornar um profissional completo na área.
               </p>
