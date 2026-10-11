@@ -1,60 +1,116 @@
 import React from 'react';
-import { Heart, ArrowUp, Link2 } from 'lucide-react';
+import { ArrowUp, Mail, MessageCircle } from 'lucide-react';
+import { GithubIcon, LinkedinIcon } from './SocialIcons';
 
 export default function Footer() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const socialLinks = [
+    { href: 'https://wa.me/5585987855611', label: 'WhatsApp', icon: MessageCircle },
+    { href: 'https://www.linkedin.com/in/edson-carvalho-213b051b1/', label: 'LinkedIn', icon: LinkedinIcon },
+    { href: 'https://github.com/Edson468', label: 'GitHub', icon: GithubIcon },
+    { href: 'mailto:edson4518@gmail.com', label: 'E-mail', icon: Mail },
+  ];
+
+  const quickLinks = [
+    { label: 'Início', href: '#home' },
+    { label: 'Sobre Mim', href: '#about' },
+    { label: 'Habilidades', href: '#skills' },
+    { label: 'Projetos', href: '#projects' },
+    { label: 'Experiência', href: '#experience' },
+    { label: 'Contato', href: '#contact' },
+  ];
+
   return (
-    <footer className="bg-slate-900 text-white py-12 border-t border-white/5">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-8">
-          {/* Marca e Descrição */}
-          <div className="text-center md:text-left">
-            <h2 className="text-2xl font-bold">Edson<span className="text-blue-400"> Carvalho</span></h2>
-            <p className="text-slate-400 mt-2">Transformando ideias em experiências digitais modernas.</p>
+    <footer className="relative border-t border-white/10 bg-[#070b14] text-slate-400">
+      <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
+        <div className="grid gap-8 md:grid-cols-12 md:gap-12">
+          
+          {/* Coluna 1: Marca & Propósito */}
+          <div className="md:col-span-5 space-y-4">
+            <div className="flex items-center gap-2">
+              <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-tr from-blue-600 to-cyan-400 font-mono text-xs font-bold text-white shadow-md">
+                EC
+              </span>
+              <h2 className="text-xl font-bold tracking-tight text-white">
+                Edson <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Carvalho</span>
+              </h2>
+            </div>
+            
+            <p className="text-sm leading-relaxed text-slate-400 max-w-sm">
+              Desenvolvedor Fullstack com foco em criar aplicações que unem visual elegante, alta usabilidade e código resiliente.
+            </p>
+
+            <div className="flex items-center gap-2 text-xs text-emerald-400 font-medium">
+              <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span>Aberto para oportunidades e novos desafios</span>
+            </div>
           </div>
 
-          {/* Redes Sociais */}
-          <div className="flex gap-4">
-            {/* WhatsApp */}
-            <a href="https://wa.me/5585987855611" target="_blank" rel="noopener noreferrer" 
-               className="w-10 h-10 flex items-center justify-center bg-white/5 rounded-full hover:bg-green-500/20 transition-all duration-300 shadow-lg hover:-translate-y-1">
-              <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" className="w-6 h-6 object-contain" />
-            </a>
-            {/* LinkedIn */}
-            <a href="https://www.linkedin.com/in/edson-carvalho-213b051b1/" target="_blank" rel="noopener noreferrer" 
-               className="w-10 h-10 flex items-center justify-center bg-white/5 rounded-full hover:bg-blue-500/20 transition-all duration-300 shadow-lg hover:-translate-y-1">
-              <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn" className="w-6 h-6 object-contain" />
-            </a>
-            {/* GitHub */}
-            <a href="https://github.com/Edson468" target="_blank" rel="noopener noreferrer" 
-               className="w-10 h-10 flex items-center justify-center bg-white/5 rounded-full hover:bg-white/20 transition-all duration-300 shadow-lg hover:-translate-y-1">
-              <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub" className="w-6 h-6 object-contain bg-white rounded-full" />
-            </a>
-            {/* Gmail */}
-            <a href="mailto:edson4518@gmail.com" target="_blank" rel="noopener noreferrer" 
-               className="w-10 h-10 flex items-center justify-center bg-white/5 rounded-full hover:bg-red-500/20 transition-all duration-300 shadow-lg hover:-translate-y-1">
-              <img src="https://cdn-icons-png.flaticon.com/512/5968/5968534.png" alt="Gmail" className="w-6 h-6 object-contain" />
-            </a>
+          {/* Coluna 2: Navegação Rápida */}
+          <div className="md:col-span-4 space-y-3">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-slate-200">
+              Navegação Rápida
+            </h3>
+            <ul className="grid grid-cols-2 gap-2 text-xs">
+              {quickLinks.map((item) => (
+                <li key={item.label}>
+                  <a
+                    href={item.href}
+                    className="text-slate-400 transition-colors hover:text-white hover:underline"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
 
-          {/* Botão Voltar ao Topo */}
-          <button 
-            onClick={scrollToTop}
-            className="p-3 bg-white/5 rounded-full hover:bg-white/10 transition-all cursor-pointer group border border-white/10"
-            title="Voltar ao topo"
-          >
-            <ArrowUp size={20} className="group-hover:-translate-y-1 transition-transform" />
-          </button>
+          {/* Coluna 3: Redes & Voltar ao topo */}
+          <div className="md:col-span-3 flex flex-col justify-between items-start md:items-end gap-6">
+            <div className="space-y-2 text-left md:text-right">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-slate-200">
+                Redes & Contato
+              </h3>
+              <div className="flex items-center gap-2">
+                {socialLinks.map(({ href, label, icon: Icon }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-slate-900/80 text-slate-300 transition-all hover:border-blue-400 hover:bg-blue-600 hover:text-white"
+                  >
+                    <Icon size={16} />
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            <button
+              onClick={scrollToTop}
+              className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-slate-900 px-4 py-2 text-xs font-semibold text-slate-300 transition-all hover:border-blue-400 hover:bg-slate-800 hover:text-white"
+              aria-label="Voltar ao início da página"
+            >
+              <span>Voltar ao topo</span>
+              <ArrowUp size={14} className="text-blue-400" />
+            </button>
+          </div>
+
         </div>
 
-        <div className="h-px bg-white/10 w-full mb-8"></div>
+        {/* Linha Divisória */}
+        <div className="mt-10 h-px bg-white/5" />
 
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
-          <p>&copy; {new Date().getFullYear()} Todos os direitos reservados.</p>
-          <p>Desenvolvido por Edson Carvalho</p>
+        {/* Copyright */}
+        <div className="mt-6 flex flex-col items-center justify-between gap-3 text-xs text-slate-500 sm:flex-row">
+          <p>© {new Date().getFullYear()} Edson Carvalho. Todos os direitos reservados.</p>
+          <p className="flex items-center gap-1.5">
+            Construído com React, Tailwind CSS & foco em cada detalhe.
+          </p>
         </div>
       </div>
     </footer>
